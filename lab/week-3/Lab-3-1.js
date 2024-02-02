@@ -2,7 +2,7 @@
 
 
 //ARRAY OF FRUITS
-var fruits = ["apple", "banana", "cherry", "grape", "orange"];
+var fruits = ["apples", "banana", "cherry", "grape", "orange"];
 
 
 //OUTPUT ONE FRUIT FROM THE ARRAY IN POPUP BOX
