@@ -1,95 +1,82 @@
 window.onload = pageready;
 
 function pageready() {
+  // Get form values
+  var formHandle = document.forms.ixdForm;
 
-    // Validate form fields
-    var isValid = validateForm();
-
-    if (isValid) {
-        // Hide header and form
-        document.getElementById('welcome').style.display = 'none';
-        document.getElementById('form').style.display = 'none';
-
-        // Show confirmation message
-        document.getElementById('result').style.display = 'block';
-
-        // Get form values
-        var firstName = document.getElementById('in_fName').value;
-        var lastName = document.getElementById('in_lName').value;
-        var id = document.getElementById('in_id').value;
-        var program = document.getElementById('in_program').options[document.getElementById('in_program').selectedIndex].text;
-        var project = document.querySelector('input[name="f__project"]:checked').value;
-
-        // Update confirmation message with form values
-        document.getElementById('result__Fname').innerText = firstName;
-        document.getElementById('result__Lname').innerText = lastName;
-        document.getElementById('result__id').innerText = id;
-        document.getElementById('result__program').innerText = program;
-        document.getElementById('result__project').innerText = project;
-    }
-
-
-function validateForm() {
-    var isValid = true;
+  function validateForm(e) {
+    e.preventDefault();
 
     // Validate First Name
-    var firstName = document.getElementById('in_fName');
-    if (firstName.value === '') {
-        firstName.style.background = "red";
-        firstName.style.color = "White";
-        firstName.focus();
-        firstName.innerHTML ="Please enter your First Name."; 
-        return false
-         } else {
-        firstName.style.direction = "none";
+    var firstName = document.getElementById("in_fName");
+    if (firstName.value === "") {
+      firstName.style.background = "red";
+      firstName.focus();
+      return false;
+    } else {
+      firstName.style.background = "White";
     }
-
     // Validate Last Name
-    var lastName = document.getElementById('in_lName');
-    if (firstName.value === '') {
-        firstName.style.background = "red";
-        firstName.style.color = "White";
-        firstName.focus();
-        firstName.innerHTML ="Please enter your Last Name."; 
-        return false
-         } else {
-        firstName.style.direction = "none";
+    var lastName = document.getElementById("in_lName");
+    if (lastName.value === "") {
+      lastName.style.background = "red";
+      lastName.focus();
+      return false;
+    } else {
+      lastName.style.background = "White";
     }
 
     // Validate Humber ID with regex
-    var id = document.getElementById('in_id');
+    var id = document.getElementById("in_id");
     var idRegex = /^[N|n]\d{8}$/;
     if (!idRegex.test(id.value)) {
-            id.style.background = "red";
-            id.style.color = "White";
-            id.focus();
-            id.innerHTML ="Please enter your valid Humber id"; 
-            return false
-             } else {
-            id.style.direction = "none";
-        }
+      id.style.background = "red";
+      id.focus();
+      return false;
+    } else {
+      id.style.background = "White";
+    }
 
     // Validate Program
-    var program = document.getElementById('in_program');
-    if (program.value === '') {
-        program.style.background = "red";
-        program.style.color = "White";
-        program.focus();
-        program.innerHTML ="Please select anyone program"; 
-        return false
-         } else {
-        program.style.direction = "none";
+    var program = document.getElementById("in_program");
+    if (program.value === "X") {
+      program.style.background = "red";
+      program.focus();
+      return false;
+    } else {
+      program.style.background = "White";
     }
 
     // Validate Project Selection
-    var projectSelection = document.querySelectorAll('input[name="f__project"]:checked');
-    if (projectSelection.length === 0) {
-        document.getElementById('caption_project').classList.add('error');
-        isValid = false;
-    } else {
-        document.getElementById('caption_project').classList.remove('error');
+    var projectSelection = document.getElementsByName("f__project");
+    var projectPara = document.getElementById("caption_project");
+    var projectSelectionValue = null;
+    for (let i = 0; i < projectSelection.length; i++) {
+      if (projectSelection[i].checked === false) {
+        projectPara.style.background = "red";
+      } else {
+        projectPara.style.background = "White";
+        projectSelectionValue = projectSelection[i].value;
+      }
     }
 
-    return isValid;
-}
+    if(projectSelectionValue == null) {
+        return false;
+    }
+
+    // Hide header and form
+    document.getElementById("welcome").style.display = "none";
+    document.getElementById("form").style.display = "none";
+
+    // Show confirmation message
+    document.getElementById("result").style.display = "block";
+
+    document.getElementById("result__Fname").textContent = firstName.value;
+    document.getElementById("result__Lname").textContent = lastName.value;
+    document.getElementById("result__id").textContent = id.value;
+    document.getElementById("result__program").textContent = program.value;
+    document.getElementById("result__project").textContent = projectSelectionValue;
+  }
+
+  formHandle.onsubmit = validateForm;
 }
