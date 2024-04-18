@@ -1,0 +1,41 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>SVG Lab</title>
+</head>
+
+<body id="svgBody">
+<script async defer src="Lab-12-svg.js"></script>
+<div id="svgDiv">
+
+	<svg width="300" height="300"  xmlns="http://www.w3.org/2000/svg" version="1.1">
+	<!--ALL OF YOUR SVG ELEMENTS GO HERE INSIDE THE <svg PARENT ELEMENT.-->
+		
+		
+<!--UNCOMMENT THE LINES BELOW TO SEE HOW I USED THE <pattern> SVG ELEMENT WITH A SQUARE TO CREATE A 10px by 10px GRID OVERLAY TO MAKE LOCATING COORDINATES EASIER WHILE I CREATED THE GRAPHIC.-->
+	 <pattern id="dotGrid" patternUnits="userSpaceOnUse" x="0" y="0" width="10" height="10"  >
+		<rect width="10" height="10" stroke="black" fill="none" />
+	</pattern> 
+	<rect width="300" height="300" fill="url(#dotGrid)" />
+
+	<!-- <circle r="45" cx="240" cy="70" fill="yellow" stroke="orange" stroke-width="3" opacity="0.5" /> -->
+	<!-- <ellipse rx="55" ry="30" cx="210" cy="220" -->
+    <!-- style="fill:yellow;stroke:green;stroke-width:3" /> -->
+
+	<rect id="sky" width="500" height="300" x="-10" y="-10" style="fill:rgb(35, 210, 236);stroke-width:3;stroke:red" />	
+	<rect width="300" height="160" x="0" y="140" style="fill:rgb(12, 226, 8)" />
+	<rect width="100" height="100" x="30" y="120" style="fill:rgba(186, 96, 18);stroke-width:5" />
+	<polygon points="80,50 130,120 30,120"  style="fill:rgb(255, 0, 51);stroke:purple;stroke-width:3"/>
+	<circle id="sun" r="40" cx="240" cy="50" fill="yellow" stroke="orange" stroke-width="3" />
+	<circle r="20" cx="110" cy="30" fill="white" />
+	<circle r="28" cx="130" cy="30" fill="white" />
+	<circle r="25" cx="120" cy="50" fill="white" />
+	<ellipse rx="55" ry="30" cx="220" cy="230"  style="fill:rgb(0, 217, 255);stroke:rgb(221, 240, 12);stroke-width:3" />
+	
+
+	
+	</svg>
+</div>
+</body>
+</html>

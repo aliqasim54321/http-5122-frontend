@@ -1,0 +1,36 @@
+body {
+    background-color: black;
+    color: aquamarine;
+  }
+  
+  table {
+    border: 2px solid aquamarine;
+    margin: 5px;
+  }
+  td {
+    border: 1px solid aquamarine;
+    height: 55px;
+    width: 55px;
+    font-size: x-large;
+    text-align: center;
+  }
+  
+  @media only screen and (max-width: 600px) {
+    td {
+      height: 30px;
+      width: 30px;
+      font-size: large;
+    }
+  }
+
+  #game-start {
+    display: none;
+  }
+
+  #form {
+    font-size: 2em;
+  }
+
+  #name{
+    padding:1em 0.5em 0.5em 2em ;
+  }
