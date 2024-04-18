@@ -9,17 +9,18 @@
     <script async defer src="multiple.js"></script>
   </head>
   <body>
-
+ <!--Giving the source for the auido that will be played at different instance-->
     <audio id ="audio4" src="win.mp3"></audio>
     <audio id ="audio1" src="lose.mp3"></audio>
     <audio id ="audio3" src="click.mp3"></audio>
     <center>
+      <!--form is been used to accept the name as the input-->
       <form id="form" action="" method="get">
         <label for="name">Name:</label><br>
         <input type="text" id="name" name="name"><br><br>
         <input type="submit" value="Submit">
       </form>
-    
+    <!--Taking the div id as game start so that styling can done for displaying th content -->
       <div id="game-start">
         <h1>Treasure Game</h1>
         <h1>Welcome <span id="player-name"></span></h1>
