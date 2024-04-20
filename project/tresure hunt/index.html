@@ -9,27 +9,28 @@
     <script async defer src="multiple.js"></script>
   </head>
   <body>
- <!--Giving the source for the auido that will be played at different instance-->
-    <audio id ="audio4" src="win.mp3"></audio>
-    <audio id ="audio1" src="lose.mp3"></audio>
-    <audio id ="audio3" src="click.mp3"></audio>
-    <center>
+    <div class="container">
+      <!--Giving the source for the auido that will be played at different instance-->
+      <audio id="audio4" src="win.mp3"></audio>
+      <audio id="audio1" src="lose.mp3"></audio>
+      <audio id="audio3" src="click.mp3"></audio>
       <!--form is been used to accept the name as the input-->
-      <form id="form" action="" method="get">
-        <label for="name">Name:</label><br>
-        <input type="text" id="name" name="name"><br><br>
-        <input type="submit" value="Submit">
+      <form id="form" method="get">
+        <label for="name">Name</label><br />
+        <input type="text" id="name" name="name" /><br />
+        <label id="error"></label>
+        <input type="submit" value="Submit" />
       </form>
-    <!--Taking the div id as game start so that styling can done for displaying th content -->
+      <!--Taking the div id as game start so that styling can done for displaying th content -->
       <div id="game-start">
         <h1>Treasure Game</h1>
-        <h1>Welcome <span id="player-name"></span></h1>
-        <h1>Attempts : <span id="attempts">0</span></h1>
+        <h2>Welcome <span id="player-name"></span></h2>
+        <h2>Attempts : <span id="attempts">0</span></h2>
+        <p id="notes"></p>
         <div>
           <table id="my-game"></table>
         </div>
+      </div>
     </div>
-    </center>
   </body>
-  </html>
-
+</html>

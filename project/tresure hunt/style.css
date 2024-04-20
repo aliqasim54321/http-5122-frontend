@@ -1,37 +1,75 @@
 body {
-    background-color: black;
-    color: aquamarine;
-  }
-  /*table coloue is defined here*/
-  table {
-    border: 2px solid aquamarine;
-    margin: 5px;
-  }
-  /*Defining table data and styling */
+  background-color: black;
+  color: aquamarine;
+  margin: 0;
+  padding: 0;
+}
+.container {
+  display: grid;
+  justify-content: center;
+  align-items: center;
+}
+/*table coloue is defined here*/
+table {
+  border: 2px solid aquamarine;
+  margin: 5px;
+}
+/*Defining table data and styling */
+td {
+  border: 1px solid aquamarine;
+  height: 55px;
+  width: 55px;
+  font-size: x-large;
+  text-align: center;
+}
+#game-start {
+  text-align: center;
+}
+#notes {
+  text-align: center;
+}
+/*using media screem for the reposiveness of the website*/
+@media only screen and (max-width: 600px) {
   td {
-    border: 1px solid aquamarine;
-    height: 55px;
-    width: 55px;
-    font-size: x-large;
-    text-align: center;
+    height: 30px;
+    width: 30px;
+    font-size: large;
   }
-  /*using media screem for the reposiveness of the website*/
-  @media only screen and (max-width: 600px) {
-    td {
-      height: 30px;
-      width: 30px;
-      font-size: large;
-    }
-  }
+}
 /*Making the block none until the name is not received*/
-  #game-start {
-    display: none;
-  }
+#game-start {
+  display: none;
+}
 
-  #form {
-    font-size: 2em;
-  }
+#form {
+  font-size: 2em;
+  margin: 1em;
+  text-align: center;
+}
 
-  #name{
-    padding:1em 0.5em 0.5em 2em ;
-  }
+#name {
+  padding: 1em 0.5em 0.5em 2em;
+  border-radius: 1em;
+}
+
+
+input[type="submit"] {
+  padding: 0.7em 1em;
+  background-color: aquamarine;
+  border-radius: 10px;
+  border: none;
+  font-weight: bold;
+  outline: none;
+}
+
+input[type="submit"]:hover {
+  background-color: rgb(42, 188, 140);
+}
+
+#error {
+  color: red;
+  font-size: 0.5em;
+  text-align: center;
+  display: none;
+  padding: 0.5em;
+}
