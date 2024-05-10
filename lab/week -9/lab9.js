@@ -1,7 +1,7 @@
 ﻿//LAB 9-DATA STORAGE: INDEX PAGE
 //window.onload
 window.onload = function() {
-    var formHandle = document.forms.infoForm;
+    var formHandle = document.forms.infoForm;   
 
     var message =document.getElementById('newMsgBox');
     var delbtn = document.getElementById('btnDel');
